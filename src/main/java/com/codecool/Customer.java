@@ -12,11 +12,11 @@ public class Customer {
     private List<Sale> sales = new ArrayList<>();
 
 
-    public void Customer() {
+    public Customer() {
 
     }
 
-    public void Customer(String name, String surname, int birthyear, String gender) {
+    public Customer(String name, String surname, int birthyear, String gender) {
         this.name = name;
         this.surname = surname;
         this.birthyear = birthyear;
@@ -47,20 +47,20 @@ public class Customer {
 
     public void setName(String name) {
         if(name.equals("")){
-            throw new IllegalArgumentException("Name name can't be empty");
+            throw new IllegalArgumentException("Name can't be empty");
         }
         if(name.equals(null)) {
-            throw new NullPointerException("Name name can't be empty");
+            throw new NullPointerException("Name can't be empty");
         }
         this.name = name;
     }
 
     public void setSurname(String surname) {
         if(surname.equals("")){
-            throw new IllegalArgumentException("Surname name can't be empty");
+            throw new IllegalArgumentException("Surname can't be empty");
         }
         if(surname.equals(null)) {
-            throw new NullPointerException("Surname name can't be empty");
+            throw new NullPointerException("Surname can't be empty");
         }
         this.surname = surname;
     }

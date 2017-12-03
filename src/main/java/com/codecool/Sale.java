@@ -8,11 +8,11 @@ public class Sale {
     private BigDecimal netValue;
     private int taxRate;
 
-    public void Sale() {
+    public Sale() {
 
     }
 
-    public void Sale(String productName, BigDecimal netValue, int taxRate) {
+    public Sale(String productName, BigDecimal netValue, int taxRate) {
         this.productName = productName;
         this.netValue = netValue;
         this.taxRate = taxRate;
@@ -23,8 +23,8 @@ public class Sale {
         if(productName.equals("")){
             throw new IllegalArgumentException("Product name can't be empty");
         }
-        if(productName.equals(null)) {
-            throw new NullPointerException("Product name can't be empty");
+        if(productName.equals(null)){
+            throw new NullPointerException("Product can't be empty");
         }
         this.productName = productName;
     }
@@ -57,7 +57,7 @@ public class Sale {
 
 
     public BigDecimal getGrossValue() {
-        BigDecimal taxValue = this.getNetValue().multiply(new BigDecimal(0.01)) ;
+        BigDecimal taxValue = this.getNetValue().multiply(new BigDecimal(this.getTaxRate() *0.01)) ;
 
         return this.getNetValue().add(taxValue);
     }
